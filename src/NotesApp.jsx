@@ -10,8 +10,9 @@ export default function NotesApp() {
   const [selectedNote, setSelectedNote] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleAddNote = (title, text) => {
+  const handleAddNote = (category, title, text) => {
     const newNote = {
+      category,
       title,
       text,
       createdAt: format(new Date(), "MMM do h:mm a"),

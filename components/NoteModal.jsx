@@ -8,8 +8,8 @@ export default function NoteModal({ note, isOpen, onClose, onUpdateNote }) {
 
   if (!note || !isOpen) return null;
 
-  const handleSubmit = (title, text) => {
-    onUpdateNote({ title, text });
+  const handleSubmit = (category, title, text) => {
+    onUpdateNote({ category, title, text });
     setIsEditing(false);
   };
 
@@ -25,12 +25,14 @@ export default function NoteModal({ note, isOpen, onClose, onUpdateNote }) {
         {isEditing ? (
           <AddNoteForm
             onAddNote={handleSubmit}
+            initialCategory={note.category}
             initialTitle={note.title}
             initialText={note.text}
             isEditMode={true}
           />
         ) : (
-          <div>
+          <div className="edit-note">
+            {note.category && <small>Category: {note.category}</small>}
             <h2 onDoubleClick={() => setIsEditing(true)}>{note.title}</h2>
             <p onDoubleClick={() => setIsEditing(true)}>{note.text}</p>
           </div>

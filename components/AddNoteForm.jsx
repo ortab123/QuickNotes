@@ -1,19 +1,22 @@
 import { useState } from "react";
 import "./AddNoteForm.css";
+import { categories } from "../src/categories";
 
 export default function AddNoteForm({
   onAddNote,
   initialTitle = "",
   initialText = "",
+  initialCategory = "",
   isEditMode = false,
 }) {
   const [noteTitle, setNoteTitle] = useState(initialTitle);
   const [noteText, setNoteText] = useState(initialText);
+  const [noteCategory, setNoteCategory] = useState(initialCategory);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (noteText.trim() === "") return;
-    onAddNote(noteTitle, noteText);
+    onAddNote(noteCategory, noteTitle, noteText);
     if (!isEditMode) {
       setNoteTitle("");
       setNoteText("");
@@ -22,6 +25,21 @@ export default function AddNoteForm({
 
   return (
     <form className="add-note" onSubmit={handleSubmit}>
+      <div className="category-row">
+        <label htmlFor="category">Category:</label>
+        <select
+          id="category"
+          value={noteCategory}
+          onChange={(e) => setNoteCategory(e.target.value)}
+        >
+          <option value="">Select a category</option>
+          {Object.keys(categories).map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+      </div>
       <input
         className="title-input"
         placeholder="Title"

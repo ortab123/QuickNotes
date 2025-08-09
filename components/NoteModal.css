@@ -20,6 +20,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.edit-note p {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 .close-btn {
   position: absolute;
   bottom: 15px;
