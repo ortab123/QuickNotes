@@ -70,17 +70,18 @@ src/
 yarn start
 The app will automatically open in your browser at http://localhost:3000
 
-## Technologies Used
+## 🛠 Technologies Used
 
--React 18
--CSS Modules
--date-fns (for date formatting)
--React Modal
--React Icons
+- React 18
+- CSS Modules
+- date-fns (for date formatting)
+- React Modal
+- React Icons
 
-Notes
-Data is saved to and loaded from the browser's localStorage.
+---
 
-You can add, delete, and update notes as well as assign categories.
+## 📝 Notes
 
-Notes can be filtered and searched by text and category.
+- Data is saved to and loaded from the browser's `localStorage`.
+- You can add, delete, and update notes as well as assign categories.
+- Notes can be filtered and searched by text and category.
