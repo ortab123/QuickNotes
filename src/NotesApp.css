@@ -3,12 +3,63 @@
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f9fb;
+  min-height: 100vh;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 8px 15px;
+  width: 550px;
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 0 3px rgba(100, 149, 237, 0.3);
+}
+
+.category-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.category-radio {
+  display: none;
+}
+
+.category-label {
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  transition: all 0.2s ease;
+}
+
+.category-label:hover {
+  background-color: #e0e0e0;
 }
 
 .notes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
   padding: 20px;
   max-width: 900px;
+  width: 100%;
 }
